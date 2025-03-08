@@ -27,7 +27,7 @@ url: "https://monacoding.github.io" # the base hostname & protocol for your site
 github_username:  monacoding
 
 # Build settings
-theme: jekyll-theme-merlot
+theme: minima
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
