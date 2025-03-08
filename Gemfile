@@ -1,8 +1,11 @@
 source "https://rubygems.org"
 
-gem "jekyll", "~> 4.4.1"
 
-gem "jekyll-theme-clean-blog"
+
+#gem "jekyll-theme-clean-blog"
+gem "github-pages", group: :jekyll_plugins
+gem "jekyll-remote-theme" # 원격 테마를 사용할 경우 필요
+gem "webrick" # Ruby 3.0 이상에서 필요
 
 group :jekyll_plugins do
   gem "jekyll-feed", "~> 0.12"
