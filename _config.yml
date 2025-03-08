@@ -18,7 +18,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: mona의 코딩 생활
+title: mona의 코딩 생활!!
 email: symphony5809@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   여기는 mona가 컴퓨터 프로그래밍을 공부하면서 성장 과정을 기록 하는 블로그 입니다
