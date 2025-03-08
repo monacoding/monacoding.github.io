@@ -1,9 +1,14 @@
-name: Deploy Jekyll with Chirpy
+name: Deploy Jekyll with Minima
 
 on:
   push:
     branches:
       - main
+
+permissions:  # 🔹 GitHub Actions가 저장소에 푸시할 수 있도록 권한 추가
+  contents: write
+  pages: write
+  id-token: write
 
 jobs:
   build:
@@ -12,7 +17,7 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
         with:
-          submodules: true  # 서브모듈 활성화
+          submodules: false  # 🚨 서브모듈 비활성화 (필요하면 true)
 
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
@@ -33,3 +38,4 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./_site
+          publish_branch: gh-pages  # 🚨 GitHub Pages 브랜치 지정
