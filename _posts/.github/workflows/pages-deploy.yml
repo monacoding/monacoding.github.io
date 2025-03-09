@@ -1,0 +1,41 @@
+name: Deploy Jekyll with Minima
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:  # 🔹 GitHub Actions가 저장소에 푸시할 수 있도록 권한 추가
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+        with:
+          submodules: false  # 🚨 서브모듈 비활성화 (필요하면 true)
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.1'
+
+      - name: Install Bundler & Jekyll
+        run: |
+          gem install bundler
+          bundle config set --local without 'development test'
+          bundle install --jobs 4 --retry 3
+
+      - name: Build Jekyll Site
+        run: bundle exec jekyll build
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site
+          publish_branch: gh-pages  # 🚨 GitHub Pages 브랜치 지정

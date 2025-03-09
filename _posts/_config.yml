@@ -31,9 +31,9 @@ github_username:  monacoding
 
 # Build settings
 #theme: jekyll-theme-clean-blog
-#remote_theme: squarezero/squarezero.github.io
+remote_theme: squarezero/squarezero.github.io
 plugins:
- # - jekyll-remote-theme
+  - jekyll-remote-theme
   - jekyll-feed
   - jekyll-seo-tag
 
