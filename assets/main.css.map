@@ -1,0 +1,14 @@
+{
+	"version": 3,
+	"file": "main.css",
+	"sources": [
+		"main.scss",
+		"_sass/styles.scss"
+	],
+	"sourcesContent": [
+		"@import \"styles\";\n\n@import url('https://fonts.googleapis.com/css?family=Abel|Dosis|Source+Code+Pro|Roboto+Slab:100|Source+Code+Pro|Source+Sans+Pro:200|Unica+One|Josefin+Sans:300|Nothing+You+Could+Do');\n",
+		"// Import Core Clean Blog SCSS\n"
+	],
+	"names": [],
+	"mappings": "AAEA,OAAO,CAAC,6KAAI"
+}
